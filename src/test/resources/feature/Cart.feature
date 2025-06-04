@@ -10,7 +10,7 @@ Feature: Validate Cart page functionalities
   Scenario: Add a single product to the cart
     When user adds the "product" to the cart
 
-    @Smoke
+  @Smoke
   Scenario: Add many product to the cart
     When user adds the following products to the cart:
       | Sauce Labs Backpack      |
