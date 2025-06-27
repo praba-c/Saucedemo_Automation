@@ -18,9 +18,9 @@ public class Hooks {
 
     @After
     public void clean(Scenario scenario) {
-        scenario.attach(Screenshot.takeScreenshot(DriverManager.getDriver(), scenario.getName()), "image/png", "SCREENSHOT");
+        boolean status = scenario.isFailed();
+        scenario.attach(Screenshot.takeScreenshot(DriverManager.getDriver(), scenario.getName(), status), "image/png", "SCREENSHOT");
         Screenshot.takeFullPageScreenshot(DriverManager.getDriver(), scenario.getName());
         DriverManager.getDriver().quit();
     }
-
 }
