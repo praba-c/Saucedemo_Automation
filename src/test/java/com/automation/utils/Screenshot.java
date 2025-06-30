@@ -18,9 +18,9 @@ public class Screenshot {
         String fileName = name + ".png";
         try {
             if (!status)
-                FileUtils.copyFile(file, new File("screenshots/passedTests/" + fileName));
+                FileUtils.copyFile(file, new File("testOutput/screenshots/passedTests/" + fileName));
             else
-                FileUtils.copyFile(file, new File("screenshots/failedTests/" + fileName));
+                FileUtils.copyFile(file, new File("testOutput/screenshots/failedTests/" + fileName));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -30,6 +30,6 @@ public class Screenshot {
 
     public static void takeFullPageScreenshot(WebDriver driver, String name) {
         Shutterbug.shootPage(driver, Capture.FULL, true)
-                .withName(name).save("fullPageScreenshots/");
+                .withName(name).save("testOutput/fullPageScreenshots/");
     }
 }
